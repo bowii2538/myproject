@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2017 at 05:54 AM
+-- Generation Time: Mar 27, 2017 at 06:50 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -23,47 +23,67 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `department`
+-- Table structure for table `tbl_users`
 --
 
-CREATE TABLE `department` (
-  `DeptID` varchar(10) NOT NULL,
-  `DeptName` varchar(100) NOT NULL,
-  `DeptTel` varchar(20) NOT NULL,
-  `DeptURL` varchar(20) NOT NULL
+CREATE TABLE `tbl_users` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(25) NOT NULL,
+  `user_email` varchar(60) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `joining_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_email`, `user_password`, `joining_date`) VALUES
+(1, 'Nipaporn Maseepla', 'bowiilovejaja@gmail.com', '8468a1d3c089290c12f7b9365385f367', '2017-03-27 06:11:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Table structure for table `users2`
 --
 
-CREATE TABLE `member` (
-  `ID` varchar(12) NOT NULL,
-  `NAME` varchar(30) NOT NULL,
-  `SURNAME` varchar(30) NOT NULL,
-  `AGE` int(2) NOT NULL,
-  `SALARY` int(6) NOT NULL,
-  `POSITION` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `users2` (
+  `id` int(11) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `department`
+-- Indexes for table `tbl_users`
 --
-ALTER TABLE `department`
-  ADD PRIMARY KEY (`DeptID`);
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `member`
+-- Indexes for table `users2`
 --
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `users2`
+  ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `users2`
+--
+ALTER TABLE `users2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
